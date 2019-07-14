@@ -1,0 +1,37 @@
+from wordcloud import WordCloud, STOPWORDS
+import matplotlib.pyplot as plt
+import urllib.request
+
+
+
+try:
+    def freq(str1):
+        str1 = str.split()
+        str2 = []
+
+        for i in str1:
+            if i not in str2:
+                str2.append(i)
+
+        for i in range(0, len(str2)):
+            print(str2[i], ':', str.count(str2[i]))
+
+except FileNotFoundError:
+    print("File Not Found")
+
+except TypeError:
+    print("File Is Not Valid")
+
+
+
+str ='Messi is the best football player in the world. He is a versatile player. He plays football for Barca. Camp Nou is the home ground of Barca. Messi is from Argentina. Argentina national football team is not as good as Barca.'
+freq(str)
+
+
+
+wordcloud = WordCloud(width=1480, height=1480, max_words=10).generate(str)
+
+
+
+plt.imshow(wordcloud)
+plt.show()
